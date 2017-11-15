@@ -9,6 +9,8 @@
     "neutrino-preset-react": "^7.3.2"
   },
   "scripts": {
+    "dev": "concurrently 'yarn start' 'yarn run server'",
+    "server": "cd server && yarn start",
     "start": "neutrino start --use neutrino-preset-react",
     "build": "neutrino build --use neutrino-preset-react"
   },
