@@ -1,0 +1,7 @@
+{
+  "name": "2017-11-minichat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Daniel Reszka <dannn.r@gmail.com>",
+  "license": "MIT"
+}
