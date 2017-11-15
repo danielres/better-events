@@ -17,6 +17,7 @@
   "dependencies": {
     "neutrino": "^7.3.2",
     "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "react-dom": "^16.1.1",
+    "socket.io-client": "^2.0.4"
   }
 }
