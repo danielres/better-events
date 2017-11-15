@@ -8,6 +8,7 @@
     "neutrino-preset-react": "^7.3.2"
   },
   "dependencies": {
+    "neutrino": "^7.3.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
   }
