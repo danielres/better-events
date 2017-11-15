@@ -10,6 +10,7 @@
   "dependencies": {
     "neutrino": "^7.3.2",
     "neutrino-preset-node": "^7.3.2",
+    "socket.io": "^2.0.4",
     "source-map-support": "^0.5.0"
   }
 }
