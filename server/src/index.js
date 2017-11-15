@@ -7,6 +7,19 @@ const PORT = process.env.PORT || 3000
 
 app.use(cors())
 
-io.on('connection', socket => console.log('a user connected'))
+let i = 1
+io.on('connection', socket => {
+  console.log('a user connected')
+  setInterval(
+    () =>
+      io.emit('message', {
+        username: 'socket.username',
+        message: `message ${i++}`,
+      }),
+    5000
+  )
+})
 
-http.listen(PORT, () => console.log(`listening on *:${PORT}`))
+http.listen(PORT, () => {
+  console.log(`listening on *:${PORT}`)
+})
