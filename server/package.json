@@ -1,0 +1,15 @@
+{
+  "name": "2017-11-minichat-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "neutrino start --use neutrino-preset-node",
+    "build": "neutrino build --use neutrino-preset-node"
+  },
+  "dependencies": {
+    "neutrino": "^7.3.2",
+    "neutrino-preset-node": "^7.3.2",
+    "source-map-support": "^0.5.0"
+  }
+}
