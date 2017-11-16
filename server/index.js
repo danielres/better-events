@@ -1,7 +1,7 @@
-import { resolve } from 'url'
-
+// @flow
 const cors = require('cors')
 const app = require('express')()
+// flow-disable-next-line
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
 

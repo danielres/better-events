@@ -1,0 +1,14 @@
+[ignore]
+.*/build/.*
+
+[include]
+
+[libs]
+node
+
+[lints]
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
+
+[strict]
