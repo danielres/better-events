@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node -r ./babelhook.js ./index.js"
+    "start": "nodemon -r ./babelhook.js ./index.js"
   },
   "dependencies": {
     "cors": "^2.8.4",
