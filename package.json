@@ -9,6 +9,7 @@
     "concurrently": "^3.5.0",
     "eslint-config-prettier": "^2.7.0",
     "eslint-plugin-class-property": "^1.0.6",
+    "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-prettier": "^2.3.1",
     "flow-bin": "^0.59.0",
     "neutrino-preset-react": "^7.3.2",
