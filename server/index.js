@@ -31,7 +31,15 @@ io.on('connection', socket => {
       ),
     1000
   )
-  socket.on('message', m => persistMessage(m).then(() => console.log('yeah')))
+
+  socket.on('message', async m => {
+    try {
+      await persistMessage(m)
+    } catch (error) {
+      console.error(error)
+    }
+  })
+
   socket.on('message', () => console.log(messages))
 })
 
