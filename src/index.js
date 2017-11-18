@@ -23,6 +23,13 @@ class App extends React.Component<Props, State> {
       this.setState({ messages: [...this.state.messages, message] })
     )
     socket.on('disconnect', () => this.setState({ status: 'disconnected' }))
+    socket.emit(
+      'message',
+      ({
+        authorId: 'authorId',
+        body: `message ${i++}`,
+      }: Message)
+    )
   }
 
   render() {
