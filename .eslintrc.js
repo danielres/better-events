@@ -6,6 +6,7 @@ module.exports = {
   "plugins": [
     "class-property",
     "prettier",
+    "flowtype",
   ],
   "parser": "babel-eslint",
   "parserOptions": {
