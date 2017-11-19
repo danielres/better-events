@@ -12,17 +12,15 @@
     "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-prettier": "^2.3.1",
     "flow-bin": "^0.59.0",
-    "neutrino-preset-react": "^7.3.2",
     "prettier": "^1.8.2"
   },
   "scripts": {
     "dev": "concurrently 'yarn start' 'yarn run server'",
     "server": "cd server && yarn start",
-    "start": "neutrino start --use neutrino-preset-react",
-    "build": "neutrino build --use neutrino-preset-react"
+    "start": "",
+    "build": ""
   },
   "dependencies": {
-    "neutrino": "^7.3.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "socket.io-client": "^2.0.4"
