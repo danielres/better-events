@@ -15,10 +15,10 @@
     "prettier": "^1.8.2"
   },
   "scripts": {
-    "dev": "concurrently 'yarn start' 'yarn run server'",
+    "dev": "concurrently 'next' 'yarn run server'",
     "server": "cd server && yarn start",
-    "start": "",
-    "build": ""
+    "start": "next start",
+    "build": "next build"
   },
   "dependencies": {
     "next": "^4.1.4",
