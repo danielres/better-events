@@ -50,8 +50,8 @@ export default class App extends React.Component<Props, State> {
         </Head>
         <div>{this.state.status}</div>
         <h1>Hello world!</h1>
-        {this.state.messages.map(({ body, authorId }) => (
-          <li>
+        {this.state.messages.map(({ body, authorId }, i) => (
+          <li key={i}>
             {authorId}: {body}
           </li>
         ))}
