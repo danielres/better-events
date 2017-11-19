@@ -6,7 +6,7 @@ const http = require('http').Server(app)
 const io = require('socket.io')(http)
 import type { Message } from '../types'
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 app.use(cors())
 
 let messages = []
