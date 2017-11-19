@@ -1,14 +1,22 @@
+// @flow
 import Head from 'next/head'
 
 import io from 'socket.io-client'
 import * as React from 'react'
 import { render } from 'react-dom'
+import type { Message } from '../types'
 
 const socket = io('http://localhost:3001')
 
+type Props = {}
+type State = {
+  status: 'connected' | 'disconnected',
+  messages: Array<Message>,
+}
+
 let i = 0
 
-export default class App extends React.Component {
+export default class App extends React.Component<Props, State> {
   state = {
     status: 'disconnected',
     messages: [],
@@ -17,21 +25,24 @@ export default class App extends React.Component {
   componentDidMount() {
     socket.on('connect', () => this.setState({ status: 'connected' }))
 
-    socket.on('message', message =>
+    socket.on('message', (message: Message) =>
       this.setState({ messages: [...this.state.messages, message] })
     )
     socket.on('disconnect', () => this.setState({ status: 'disconnected' }))
-    socket.emit('message', {
-      authorId: 'authorId',
-      body: `message ${i++}`,
-    })
+    socket.emit(
+      'message',
+      ({
+        authorId: 'authorId',
+        body: `message ${i++}`,
+      }: Message)
+    )
   }
 
   render() {
     return (
       <div>
         <Head>
-          <title>Chatapp</title>
+          <title>My page title</title>
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
