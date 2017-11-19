@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import io from 'socket.io-client'
 import * as React from 'react'
 import { render } from 'react-dom'
@@ -28,6 +30,13 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+        <Head>
+          <title>Chatapp</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
         <div>{this.state.status}</div>
         <h1>Hello world!</h1>
         {this.state.messages.map(({ body, authorId }) => (
