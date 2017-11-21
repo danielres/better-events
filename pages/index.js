@@ -39,11 +39,13 @@ export default class App extends React.Component<Props, State> {
 
   submitForm = e => {
     e.preventDefault()
+    const { body } = this.state.messageForm
+    if (!body) return
     socket.emit(
       'message',
       ({
         authorId: 'authorId',
-        body: this.state.messageForm.body,
+        body,
       }: Message)
     )
   }
