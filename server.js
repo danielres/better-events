@@ -23,8 +23,8 @@ io.on('connection', socket => {
 
   socket.on('message', async m => {
     try {
-      io.emit('message', (m: Message))
       await persistMessage(m)
+      io.emit('message', (m: Message))
     } catch (error) {
       console.error(error)
     }
