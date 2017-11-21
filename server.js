@@ -34,13 +34,12 @@ io.on('connection', socket => {
 
   socket.on('message', async m => {
     try {
+      io.emit('message', (m: Message))
       await persistMessage(m)
     } catch (error) {
       console.error(error)
     }
   })
-
-  socket.on('message', () => console.log(messages))
 })
 
 http.listen(PORT, () => {
