@@ -18,10 +18,10 @@
     "prettier": "^1.8.2"
   },
   "scripts": {
-    "dev": "concurrently 'next' 'yarn run server'",
-    "server": "nodemon -r ./babelhook.js ./server.js",
-    "start": "next start",
-    "build": "next build"
+    "dev": "concurrently 'next src' 'yarn run server'",
+    "server": "nodemon -r ./src/babelhook.js src/server.js",
+    "start": "next start src",
+    "build": "next build src"
   },
   "dependencies": {
     "cors": "^2.8.4",
