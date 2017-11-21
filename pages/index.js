@@ -37,7 +37,8 @@ export default class App extends React.Component<Props, State> {
 
   onChange = e => this.setState({ messageForm: { body: e.target.value } })
 
-  submitForm = () => {
+  submitForm = e => {
+    e.preventDefault()
     socket.emit(
       'message',
       ({
