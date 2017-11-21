@@ -20,17 +20,6 @@ const persistMessage = (message: Message) =>
 let i = 1
 io.on('connection', socket => {
   console.log('a user connected')
-  setTimeout(
-    () =>
-      io.emit(
-        'message',
-        ({
-          authorId: 'authorId',
-          body: `message ${i++}`,
-        }: Message)
-      ),
-    1000
-  )
 
   socket.on('message', async m => {
     try {
