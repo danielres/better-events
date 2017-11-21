@@ -12,6 +12,7 @@ type Props = { url: Object }
 type State = {
   status: 'connected' | 'disconnected',
   messages: Array<Message>,
+  messageForm: { body: string },
 }
 
 let i = 0
@@ -20,21 +21,28 @@ export default class App extends React.Component<Props, State> {
   state = {
     status: 'disconnected',
     messages: [],
+    messageForm: {
+      body: '',
+    },
   }
 
   componentDidMount() {
-    console.log({ url: this.props.url })
     socket.on('connect', () => this.setState({ status: 'connected' }))
 
     socket.on('message', (message: Message) =>
       this.setState({ messages: [...this.state.messages, message] })
     )
     socket.on('disconnect', () => this.setState({ status: 'disconnected' }))
+  }
+
+  onChange = e => this.setState({ messageForm: { body: e.target.value } })
+
+  submitForm = () => {
     socket.emit(
       'message',
       ({
         authorId: 'authorId',
-        body: `message ${i++}`,
+        body: this.state.messageForm.body,
       }: Message)
     )
   }
@@ -51,6 +59,9 @@ export default class App extends React.Component<Props, State> {
         </Head>
         <div>{this.state.status}</div>
         <h1>Hello world!</h1>
+        <form onSubmit={this.submitForm} action="">
+          <input autoFocus type="text" onChange={this.onChange} />
+        </form>
         {this.state.messages.map(({ body, authorId }, i) => (
           <li key={i}>
             {authorId}: {body}
