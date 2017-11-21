@@ -8,7 +8,7 @@ import type { Message } from '../types'
 
 const socket = io('http://localhost:3001')
 
-type Props = {}
+type Props = { url: Object }
 type State = {
   status: 'connected' | 'disconnected',
   messages: Array<Message>,
@@ -23,6 +23,7 @@ export default class App extends React.Component<Props, State> {
   }
 
   componentDidMount() {
+    console.log({ url: this.props.url })
     socket.on('connect', () => this.setState({ status: 'connected' }))
 
     socket.on('message', (message: Message) =>

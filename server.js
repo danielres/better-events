@@ -4,7 +4,7 @@ const app = require('express')()
 // flow-disable-next-line
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
-import type { Message } from '../types'
+import type { Message } from './types'
 
 const PORT = process.env.PORT || 3001
 app.use(cors())
