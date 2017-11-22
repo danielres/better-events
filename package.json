@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "cors": "^2.8.4",
+    "db-migrate": "^0.10.0",
+    "db-migrate-pg": "^0.2.5",
     "express": "^4.16.2",
     "next": "^4.1.4",
     "react": "^16.1.1",
