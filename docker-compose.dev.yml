@@ -3,8 +3,8 @@ services:
   web:
     build: .
     volumes:
-      - ".:/src"
-      - "/src/node_modules"
+      - ".:/home/app/src"
+      - "/home/app/src/node_modules"
     ports:
       - "3000:3000"
       - "3001:3001"
