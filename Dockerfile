@@ -1,10 +1,5 @@
 FROM node:9.2
 
-# WORKDIR /src
-
-# If you have native dependencies, you'll need extra tools
-# RUN apk add --no-cache make gcc g++ python
-
 RUN useradd --user-group --create-home --shell /bin/false app
 ENV HOME=/home/app
 
