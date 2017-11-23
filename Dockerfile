@@ -6,10 +6,11 @@ ENV HOME=/home/app
 COPY . $HOME/src
 RUN chown -R app:app $HOME/*
 
-USER app
+# Disabled in dev, as it creates access issues for host:
+# USER app
+
 WORKDIR $HOME/src
 RUN yarn install
-# RUN yarn run _build
 
 EXPOSE 3001
 
