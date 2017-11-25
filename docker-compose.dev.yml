@@ -15,16 +15,13 @@ services:
       - db
     environment:
       NODE_ENV: dev
-      PGPASSWORD: "${PGPASSWORD}"
-      PGUSER: "${PGUSER}"
-      PGDB: "${PGDB}"
     command: yarn run dev
   db:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: "${PGPASSWORD}"
-      POSTGRES_USER: "${PGUSER}"
-      POSTGRES_DB: "${PGDB}"
+      POSTGRES_PASSWORD: "${PG_PASSWORD}"
+      POSTGRES_USER: "${PG_USER}"
+      POSTGRES_DB: "${PG_DB}"
 
   adminer:
     image: adminer

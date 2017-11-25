@@ -3,8 +3,8 @@
     "driver": "postgres",
     "user": {"ENV": "PG_USER"},
     "password": {"ENV": "PG_PASSWORD"},
-    "host": "localhost",
-    "port": "3001",
-    "database": "better_events_dev"
+    "host": {"ENV": "PG_HOST"},
+    "port": "5432",
+    "database": {"ENV": "PG_DB"}
   }
 }
