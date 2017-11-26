@@ -1,38 +1,46 @@
+// @flow
+
 import messagesReducer from './index'
-import { types } from './actions'
 
-describe(`on ${types.POST_MESSAGE_SUCCESS}`, () => {
-  it('Appnd messages to state, resets error if any', () => {
-    const initialState = {
+import type { State } from './index'
+import type { Action, Message } from '../../types'
+
+describe(`on POST_MESSAGE_SUCCESS`, () => {
+  it('Appends messages to state, resets error if any', () => {
+    const initialState: State = {
       error: 'Oopsie',
-      items: [{ body: 'Hi1' }],
+      items: [{ authorId: '_', body: 'Hi1' }],
     }
 
-    const action = {
-      type: types.POST_MESSAGE_SUCCESS,
-      payload: { body: 'Hi2' },
+    const action: Action = {
+      type: 'POST_MESSAGE_SUCCESS',
+      payload: { authorId: '_', body: 'Hi2' },
     }
 
-    const expected = {
-      items: [{ body: 'Hi1' }, { body: 'Hi2' }],
+    const expected: State = {
+      error: null,
+      items: [{ authorId: '_', body: 'Hi1' }, { authorId: '_', body: 'Hi2' }],
     }
 
     expect(messagesReducer(initialState, action)).toEqual(expected)
   })
 })
 
-describe(`on ${types.POST_MESSAGE_FAILURE}`, () => {
+describe(`on POST_MESSAGE_FAILURE`, () => {
   it('Keeps previous state, sets error', () => {
-    const initialState = { items: [{ body: 'Hi' }] }
+    const initialState: State = {
+      error: null,
+      items: [{ authorId: '_', body: 'Hi' }],
+    }
 
-    const action = {
+    const action: Action = {
+      type: 'POST_MESSAGE_FAILURE',
       error: 'Error message',
-      type: types.POST_MESSAGE_FAILURE,
     }
 
     const expected = {
       error: 'Error message',
-      items: [{ body: 'Hi' }],
+      items: [{ authorId: '_', body: 'Hi' }],
     }
 
     expect(messagesReducer(initialState, action)).toEqual(expected)
