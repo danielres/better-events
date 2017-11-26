@@ -1,14 +1,14 @@
 // @flow
-import type { action, Message } from '../../types'
+import type { Action, Message } from '../../types'
 
-type state = { error: String | null, items: Array<Message> }
+type State = { error: String | null, items: Array<Message> }
 
-const initialState: state = {
+const initialState: State = {
   error: null,
   items: [],
 }
 
-export default (state: state = initialState, action: action) => {
+export default (state: State = initialState, action: Action) => {
   switch (action.type) {
     case 'POST_MESSAGE_SUCCESS':
       return { items: [...state.items, action.payload] }
